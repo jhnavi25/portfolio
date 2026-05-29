@@ -59,13 +59,7 @@ document.addEventListener("mousemove", e => {
   setTimeout(() => s.remove(), 100);
 });
 
-// Hamburger toggle
-function toggleNavbar() {
-  const links = document.getElementById("navLinks");
-  if (window.innerWidth <= 768) {
-    links.classList.toggle("show");
-  }
-}
+// Navigation handles toggleNavbar
 const skillIcons = {
   "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
   "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
