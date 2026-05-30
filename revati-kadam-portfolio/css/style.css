@@ -1,4 +1,6 @@
-/* ================= CSS VARIABLES ================= */
+/* ==========================================================================
+   1. CSS VARIABLES & BASE STYLES
+   ========================================================================== */
 :root {
   --bg: #0f172a;
   --text: #e2e8f0;
@@ -13,8 +15,15 @@
   --text-muted-4: rgba(226,232,240,0.45);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+*, *::before, *::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -24,14 +33,21 @@ body {
   overflow-x: hidden;
 }
 
-/* ── ANIMATIONS ── */
-@keyframes blink { 50% { border-color: transparent; } }
+/* ==========================================================================
+   2. GLOBAL ANIMATIONS
+   ========================================================================== */
+@keyframes blink { 
+  50% { border-color: transparent; } 
+}
+
 @keyframes eduFadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── SCROLL PROGRESS ── */
+/* ==========================================================================
+   3. CORE UI COMPONENTS (Progress, Navbar, Sections)
+   ========================================================================== */
 #scroll-progress {
   position: fixed;
   top: 0; left: 0;
@@ -43,7 +59,6 @@ body {
   border-radius: 0 2px 2px 0;
 }
 
-/* ── NAVBAR ── */
 .navbar {
   position: fixed;
   top: 0; left: 0;
@@ -92,6 +107,7 @@ body {
   transition: background 0.2s, color 0.2s;
   white-space: nowrap;
 }
+
 .nav-links li a {
   color: var(--text);
   text-decoration: none;
@@ -99,13 +115,13 @@ body {
   width: 100%;
   height: 100%;
 }
+
 .nav-links li:hover,
 .nav-links li:hover a {
   background: var(--primary);
   color: #fff;
 }
 
-/* ── SECTION BASE ── */
 .section {
   padding: 100px 80px;
   opacity: 0;
@@ -118,7 +134,9 @@ body {
   transform: translateY(0);
 }
 
-.section:nth-child(even) { background: var(--section-alt); }
+.section:nth-child(even) { 
+  background: var(--section-alt); 
+}
 
 .section h2 {
   font-size: clamp(26px, 3vw, 36px);
@@ -138,7 +156,9 @@ body {
   border-radius: 2px;
 }
 
-/* ── HERO ── */
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
 #home {
   min-height: 100vh;
   display: flex;
@@ -307,7 +327,9 @@ body {
   display: block;
 }
 
-/* ── ABOUT ── */
+/* ==========================================================================
+   5. ABOUT SECTION
+   ========================================================================== */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -391,7 +413,9 @@ body {
   margin-top: 6px;
 }
 
-/* ── SKILLS SECTION ── */
+/* ==========================================================================
+   6. SKILLS SECTION
+   ========================================================================== */
 .skills-header {
   text-align: center;
   margin-bottom: 30px;
@@ -445,7 +469,9 @@ body {
   box-shadow: 0 10px 30px rgba(59,130,246,0.35);
 }
 
-.skills-category { margin-bottom: 55px; }
+.skills-category { 
+  margin-bottom: 55px; 
+}
 
 .skills-category-title {
   font-size: 1.5rem;
@@ -531,7 +557,9 @@ body {
   border: 1px solid rgba(124,58,237,0.35);
 }
 
-/* ── PROJECTS ── */
+/* ==========================================================================
+   7. PROJECTS SECTION
+   ========================================================================== */
 #projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -623,8 +651,12 @@ body {
   transform: translateY(-1px);
 }
 
-/* ── CONTACT ── */
-#contact { background: linear-gradient(135deg, var(--bg), var(--section-alt)); }
+/* ==========================================================================
+   8. CONTACT SECTION
+   ========================================================================== */
+#contact { 
+  background: linear-gradient(135deg, var(--bg), var(--section-alt)); 
+}
 
 .contact-grid {
   display: grid;
@@ -696,7 +728,9 @@ form button:disabled {
   transform: none;
 }
 
-/* ── SETTINGS ── */
+/* ==========================================================================
+   9. SETTINGS & UTILITIES (Theme menus, Sparks)
+   ========================================================================== */
 .settings {
   position: fixed;
   bottom: 25px; right: 25px;
@@ -777,7 +811,6 @@ form button:disabled {
 
 .color-options span:hover { transform: scale(1.2); border-color: var(--text); }
 
-/* ── SPARK ── */
 .spark {
   position: absolute;
   width: 6px; height: 6px;
@@ -799,7 +832,9 @@ form button:disabled {
 .spark::before { top: -3px; left: 0; }
 .spark::after  { left: -3px; top: 0; }
 
-/* ── EDUCATION ── */
+/* ==========================================================================
+   10. EDUCATION TIMELINE
+   ========================================================================== */
 #education h2::before { content: "\1F393\00A0"; }
 
 .education-container {
@@ -889,9 +924,9 @@ form button:disabled {
   white-space: nowrap;
 }
 
-/* =========================================
-   LIGHT THEME OVERRIDES
-========================================= */
+/* ==========================================================================
+   11. LIGHT THEME OVERRIDES
+   ========================================================================== */
 body.light-theme {
   --bg: #f8fafc;
   --text: #0f172a;
@@ -960,9 +995,9 @@ body.light-theme .edu-card-header h3 { color: #0f172a; }
 body.light-theme .edu-card-inner p   { color: rgba(15,23,42,0.6); }
 body.light-theme .edu-timeline-dot   { border-color: var(--bg); }
 
-/* =========================================
-   ACCESSIBILITY & RESPONSIVENESS (MEDIA QUERIES)
-========================================= */
+/* ==========================================================================
+   12. MEDIA QUERIES (Responsiveness & Accessibility)
+   ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   .section { opacity: 1; transform: none; transition: none; }
 }
