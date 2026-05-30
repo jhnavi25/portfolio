@@ -1254,15 +1254,13 @@ body.light-theme .menu button {
   border-color: rgba(0,0,0,0.15);
 }
 
-/* â”€â”€ EDUCATION (improved) â”€â”€ */
+/* -- EDUCATION (improved) -- */
 @keyframes eduFadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-#education h2::before {
-  content: "ðŸŽ“ ";
-}
+#education h2::before { content: "\1F393\00A0"; }
 
 .education-container {
   position: relative;
