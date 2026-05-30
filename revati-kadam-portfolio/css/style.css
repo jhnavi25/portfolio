@@ -381,10 +381,15 @@ body {
   box-shadow: 0 10px 25px color-mix(in srgb, var(--primary) 30%, transparent);
 }
 
-.hero-social img {
+.hero-social .social-icon {
   width: 22px; height: 22px;
-  filter: brightness(0) invert(1);
+  color: #ffffff;
   transition: var(--transition);
+}
+
+.hero-social a:hover .social-icon {
+  color: #ffffff;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.4));
 }
 
 .hero-image { 
@@ -1290,4 +1295,16 @@ body.light-theme .menu button {
   background: #e2e8f0;
   color: #0f172a;
   border-color: rgba(0,0,0,0.15);
+}
+
+/* Social icons in light theme */
+body.light-theme .hero-social .social-icon {
+  color: #0f172a;
+}
+body.light-theme .hero-social a {
+  background: #e2e8f0;
+  border-color: rgba(0,0,0,0.1);
+}
+body.light-theme .hero-social a:hover .social-icon {
+  color: #ffffff;
 }
